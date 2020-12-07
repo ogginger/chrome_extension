@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+        "target": "ES6",
+        "lib": [ "ES6", "dom" ],        
+        "module": "commonjs",
+        "inlineSourceMap": true,
+        "inlineSources": true,
+        "emitDecoratorMetadata": true, 
+        "experimentalDecorators": true,
+        "allowSyntheticDefaultImports" :true,
+        "allowJs":true,
+        "noEmitOnError": true,
+        "removeComments": false,
+        "noImplicitAny": true,        
+        "outDir": "./builds/scripts"
+    },
+    "include": [
+        "src/*"
+    ]
+}
