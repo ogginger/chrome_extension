@@ -10,7 +10,7 @@ function template() {
         mode: "development",  
         output: undefined,
         optimization: {
-            "minimize": true
+            "minimize": false
         },
         devtool: "inline-source-map",
         module: {
