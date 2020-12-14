@@ -1,5 +1,6 @@
 import * as $ from "jquery";
 import * as _ from "lodash";
+import * as ashe from "./ashe";
 
 interface _any {
     [key: string]: any
@@ -161,7 +162,7 @@ export default class Component {
     render() {
         let self = this;
         self.$.off();
-        self.$.html(_.template( self.template )( self.state ));
+        self.$.html(ashe.parse( self.template, self.state ));
         self._on();
         self.$.triggerHandler("render");
     }
