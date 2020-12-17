@@ -56,7 +56,7 @@ export default class Component {
 
     public _mutate() {
         let self = this;
-        self.$.on("mutate", function( event, property ) {
+        self.$.on("mutate", function( event: any, property: any ) {
             if( self.mutate[property] != undefined ) {
                 self.mutate[property].call( self, event );
             }
@@ -120,10 +120,11 @@ export default class Component {
     public _events() {
         var self = this;
         self.entries( self.events ).forEach(function( event ) {
-            var data = event.key.split(" ");
-
+            let data = event.key.split(" ");
             if ( data.length == 1) {
-                data.push( "self" );
+                data[1] =  "self";
+            } else if ( data.length > 2 ) {
+                data[1] = data.slice( 1 ).join(" ");
             }
             self.ready[data[1]] = function() {
                 $((data[1] == "self")? self.el: data[1]).on(data[0], event.value.bind( self ));
